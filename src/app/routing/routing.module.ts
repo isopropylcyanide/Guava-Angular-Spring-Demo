@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'tips',
     component: TipsComponent
+  },
+  {
+    path: 'presentation',
+    loadChildren: '../presentation/presentation.module#PresentationModule'
   }
 ];
 
