@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootswatch/dist/yeti/bootstrap.min.css';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+@import "https://fonts.googleapis.com/css?family=Lato|Roboto:400, 900";
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
