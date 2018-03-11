@@ -55,7 +55,7 @@ const guavaUseCaseList: Array<GuavaUseCase> = [
   },
   {
     id: 6,
-    title: 'Enhanced Lists and Sets',
+    title: 'Enhanced Lists',
     description: 'Description about ',
     javaWay: 'Use case in java for ',
     guavaWay: 'Use case in Guava for ',
@@ -64,7 +64,7 @@ const guavaUseCaseList: Array<GuavaUseCase> = [
   },
   {
     id: 7,
-    title: 'Enhanced Maps',
+    title: 'Enhanced Sets',
     description: 'Description about ',
     javaWay: 'Use case in java for ',
     guavaWay: 'Use case in Guava for ',
@@ -73,7 +73,7 @@ const guavaUseCaseList: Array<GuavaUseCase> = [
   },
   {
     id: 8,
-    title: 'BiMap',
+    title: 'Enhanced Maps',
     description: 'Description about ',
     javaWay: 'Use case in java for ',
     guavaWay: 'Use case in Guava for ',
@@ -82,6 +82,15 @@ const guavaUseCaseList: Array<GuavaUseCase> = [
   },
   {
     id: 9,
+    title: 'BiMap',
+    description: 'Description about ',
+    javaWay: 'Use case in java for ',
+    guavaWay: 'Use case in Guava for ',
+    problemStatement: 'Problem statement for ',
+    defaultInputs: ' Default inputs for '
+  },
+  {
+    id: 10,
     title: 'RangeSet',
     description: 'Description about ',
     javaWay: 'Use case in java for ',

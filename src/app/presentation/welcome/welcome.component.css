@@ -11,6 +11,9 @@
   margin-top: -8px;
 }
 
+.mat-list:first-child {
+  margin-top: 40px;
+}
 .mat-icon-button:focus,
 button:focus {
   outline: none;
@@ -128,5 +131,7 @@ button:focus {
 }
 
 .active-router-link-welcome {
-  border-left: 3px solid whitesmoke;
+  border-left: 10px solid whitesmoke;
+  background: darkblue;
+  transition: all 250ms;
 }

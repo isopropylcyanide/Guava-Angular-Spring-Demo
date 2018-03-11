@@ -7,6 +7,7 @@ import { LiveJavaGuavaComponent } from './live-java-guava/live-java-guava.compon
 import { SnippetsComponent } from './snippets/snippets.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { GuavaUseCaseService } from './services/guava-use-case.service';
+import { ViewRestoreService } from './view-restore.service';
 
 const presentationRoutes: Routes = [
   {
@@ -38,6 +39,6 @@ const presentationRoutes: Routes = [
     MaterialModule
   ],
   declarations: [LiveJavaGuavaComponent, SnippetsComponent, WelcomeComponent],
-  providers: [GuavaUseCaseService]
+  providers: [GuavaUseCaseService, ViewRestoreService]
 })
 export class PresentationModule {}

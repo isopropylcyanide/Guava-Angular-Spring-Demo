@@ -1,3 +1,15 @@
-<p>
-  snippets works! Proof {{guavaUseCase.id}} {{guavaUseCase.title}} {{guavaUseCase.description}}
-</p>
+<router-outlet></router-outlet>
+<div class="container snippet-container" *ngIf="view.description">
+  <p>{{guavaUseCase.description}}</p>
+</div>
+<div class="container snippet-container" *ngIf="view.guavaWay">
+  <p>{{guavaUseCase.guavaWay}}</p>
+</div>
+<div class="container snippet-container" *ngIf="view.javaWay">
+  <p>{{guavaUseCase.javaWay}}</p>
+</div>
+
+<div id="footer-container" *ngIf="view.live" class="nav navbar-fixed-bottom navbar-dark bg-dark">
+  <div class="btn btn-success" (click)="gotoLiveView()">
+    <i class="fa fa-arrow-circle-o-right fa-lg"></i> View in action</div>
+</div>
