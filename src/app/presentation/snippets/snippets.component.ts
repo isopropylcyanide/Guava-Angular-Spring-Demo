@@ -4,6 +4,7 @@ import { GuavaUseCase } from '../guava-use-case';
 import { GuavaUseCaseService } from '../services/guava-use-case.service';
 import * as _ from 'lodash';
 import { ViewRestoreService } from '../view-restore.service';
+import { MatSnackBar } from '@angular/material';
 
 export interface SnippetView {
   description: boolean;
@@ -26,7 +27,8 @@ export class SnippetsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private guavaUseCaseService: GuavaUseCaseService,
-    private viewRestoreService: ViewRestoreService
+    private viewRestoreService: ViewRestoreService,
+    private snackBar: MatSnackBar
   ) {
     this.view = {
       description: true,
@@ -43,7 +45,9 @@ export class SnippetsComponent implements OnInit {
         relativeTo: this.route
       })
       .then(
-        function(data) {},
+        function(data) {
+          // this.snackBar.open('Live Mode enabled', '', { duration: 2000 });
+        },
         function(error) {
           console.log(error);
           this.view = this.oldView;
