@@ -1,22 +1,39 @@
 <router-outlet></router-outlet>
 
+<div class="world-icon" *ngIf="guavaUseCase.link">
+  <a target="_blank" [href]="guavaUseCase.link" class="fa fa-globe fa-2x"></a>
+</div>
+
+<!--The Description -->
 <div class="container snippet-container" *ngIf="view.description">
   <h1>{{guavaUseCase.title | uppercase}}</h1>
   <div class="container">
     <p [innerHTML]="guavaUseCase.description"></p>
   </div>
-  <div class="icon" *ngIf="guavaUseCase.link">
-    <a target="_blank" [href]="guavaUseCase.link" class="fa fa-globe"></a>
-  </div>
+</div>
 
-</div>
-<div class="container snippet-container" *ngIf="view.guavaWay">
-  <p>{{guavaUseCase.guavaWay}}</p>
-</div>
+<!-- The JAVA WAY -->
 <div class="container snippet-container" *ngIf="view.javaWay">
-  <p>{{guavaUseCase.javaWay}}</p>
+  <h1>THE JAVA WAY</h1>
+  <div class="container">
+    <p [innerHTML]="guavaUseCase.javaWay"></p>
+  </div>
 </div>
 
+<!-- The GUAVA WAY-->
+<div class="container snippet-container" *ngIf="view.guavaWay">
+  <h1>THE GUAVA WAY</h1>
+  <div class="container">
+    <p [innerHTML]="guavaUseCase.guavaWay"></p>
+  </div>
+</div>
+
+<!-- The Navigation -->
+<div class="row navigation-view">
+  <div class="arrow arrow-left"></div>
+  <div class="arrow arrow-right"></div>
+</div>
+<!-- The Footer -->
 <div id="footer-container" *ngIf="view.live" class="nav navbar-fixed-bottom navbar-dark bg-dark">
   <div class="btn btn-success" (click)="gotoLiveView()">
     <i class="fa fa-arrow-circle-o-right fa-lg"></i> View in action</div>

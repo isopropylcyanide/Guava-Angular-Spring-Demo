@@ -12,6 +12,6 @@ export class GuavaUseCase {
   guavaWay: string;
   guavaWayCaveats?: string;
   problemStatement: string;
-  defaultInputs: string;
+  defaultInputs?: string;
   link?: string;
 }

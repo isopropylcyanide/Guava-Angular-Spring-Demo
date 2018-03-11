@@ -25,7 +25,7 @@
   background: #3f3f3f;
 }
 
-.container.snippet-container div.icon {
+.world-icon {
   position: absolute;
   top: 10%;
   left: 91%;
@@ -35,4 +35,27 @@
 
 #footer-container {
   margin-left: 40%;
+}
+
+.navigation-view {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+}
+
+.arrow.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 25px solid #3884b9;
+}
+
+.arrow.arrow-right {
+  margin-left: 30px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 25px solid #3884b9;
 }
