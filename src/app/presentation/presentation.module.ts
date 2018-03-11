@@ -6,6 +6,7 @@ import { MaterialModule } from '../material/material.module';
 import { LiveJavaGuavaComponent } from './live-java-guava/live-java-guava.component';
 import { SnippetsComponent } from './snippets/snippets.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { GuavaUseCaseService } from './services/guava-use-case.service';
 
 const presentationRoutes: Routes = [
   {
@@ -34,6 +35,7 @@ const presentationRoutes: Routes = [
     RouterModule.forChild(presentationRoutes),
     MaterialModule
   ],
-  declarations: [LiveJavaGuavaComponent, SnippetsComponent, WelcomeComponent]
+  declarations: [LiveJavaGuavaComponent, SnippetsComponent, WelcomeComponent],
+  providers: [GuavaUseCaseService]
 })
 export class PresentationModule {}

@@ -14,8 +14,7 @@ export class WelcomeComponent implements OnInit {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.showWelcomeRouteDiv =
-          event.url.endsWith('/welcome') ||
-          event.url.endsWith('/presentations');
+          event.url.endsWith('/welcome') || event.url.endsWith('/presentation');
       }
     });
   }
