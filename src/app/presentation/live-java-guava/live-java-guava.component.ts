@@ -11,7 +11,6 @@ import { Location } from '@angular/common';
   styleUrls: ['./live-java-guava.component.css']
 })
 export class LiveJavaGuavaComponent implements OnInit {
-  private viewInProgess: SnippetView;
   private guavaUseCase: GuavaUseCase;
 
   constructor(
@@ -25,7 +24,6 @@ export class LiveJavaGuavaComponent implements OnInit {
 
   restoreOriginalView(): void {
     this.location.back();
-    // this.router.navigate(['../'], { relativeTo: this.route });
   }
   ngOnInit() {}
 }

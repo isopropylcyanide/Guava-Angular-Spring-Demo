@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {
+  Router,
+  ActivatedRoute,
+  ParamMap,
+  Event,
+  NavigationEnd
+} from '@angular/router';
 import { GuavaUseCase } from '../guava-use-case';
 import { GuavaUseCaseService } from '../services/guava-use-case.service';
 import * as _ from 'lodash';
@@ -30,16 +36,24 @@ export class SnippetsComponent implements OnInit {
     private viewRestoreService: ViewRestoreService,
     private snackBar: MatSnackBar
   ) {
-    this.view = {
+    this.view = this.initalizeView();
+  }
+
+  initalizeView(): SnippetView {
+    return {
       description: true,
       javaWay: false,
       guavaWay: false,
       live: true
     };
   }
-
   gotoLiveView(): void {
     this.viewRestoreService.setGuavaUseCase(this.guavaUseCase);
+    this.view.description = false;
+    this.view.javaWay = false;
+    this.view.guavaWay = false;
+    this.view.live = false;
+
     this.router
       .navigate(['live'], {
         relativeTo: this.route
@@ -57,13 +71,20 @@ export class SnippetsComponent implements OnInit {
 
   ngOnInit() {
     console.log('I am called');
-
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.guavaUseCaseService
         .getUseCaseById(+params.get('id'))
         .subscribe(useCase => {
           this.guavaUseCase = useCase;
         });
+    });
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        if (!event.url.endsWith('live')) {
+          this.view = this.initalizeView();
+        }
+      }
     });
   }
 }
