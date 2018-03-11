@@ -1,18 +1,8 @@
 <mat-sidenav-container #sidenav class="main-container">
   <mat-sidenav #sidenav mode="side" opened>
-    <mat-list role="list">
-      <mat-list-item class="btn btn-primary" routerLinkActive="active-router-link-welcome" [routerLink]="" [routerLinkActiveOptions]="{exact: true}"
-        role="listitem">
-        PreConditions
-      </mat-list-item>
-      <mat-list-item class="btn btn-primary" routerLinkActive="active-router-link-welcome" [routerLink]="" [routerLinkActiveOptions]="{exact: true}"
-        role="listitem">
-        MultiMap
-      </mat-list-item>
-      <mat-list-item class="btn btn-primary" routerLinkActive="active-router-link-welcome" [routerLink]="" [routerLinkActiveOptions]="{exact: true}"
-        role="listitem">
-        Immutable Lists
-      </mat-list-item>
+    <mat-list role="list" *ngFor="let usecase of guavaUseCaseLists">
+      <mat-list-item class="btn btn-primary" routerLinkActive="active-router-link-welcome" routerLink="snippets/{{usecase.id}}"
+        routerLinkActiveOptions="{exact: true}" role="list-item">{{usecase.title}}</mat-list-item>
     </mat-list>
   </mat-sidenav>
 

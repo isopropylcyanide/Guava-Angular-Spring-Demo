@@ -16,15 +16,17 @@ const presentationRoutes: Routes = [
   },
   {
     path: 'welcome',
-    component: WelcomeComponent
-  },
-  {
-    path: 'snippets/:id',
-    component: SnippetsComponent,
+    component: WelcomeComponent,
     children: [
       {
-        path: 'live',
-        component: LiveJavaGuavaComponent
+        path: 'snippets/:id',
+        component: SnippetsComponent,
+        children: [
+          {
+            path: 'live',
+            component: LiveJavaGuavaComponent
+          }
+        ]
       }
     ]
   }

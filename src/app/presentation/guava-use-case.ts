@@ -1,5 +1,3 @@
-import { Url } from 'url';
-
 /**
  *
  * Defines what a Guava use case model looks like for the purpose of this demo
@@ -12,7 +10,8 @@ export class GuavaUseCase {
   description: string;
   javaWay: string;
   guavaWay: string;
+  guavaWayCaveats?: string;
   problemStatement: string;
   defaultInputs: string;
-  link: Url;
+  link?: string;
 }

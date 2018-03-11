@@ -7,8 +7,8 @@
   right: 0;
 }
 
-.mat-list-item {
-  margin-top: 0px;
+.mat-list .mat-list-item {
+  margin-top: -8px;
 }
 
 .mat-icon-button:focus,
