@@ -1,6 +1,14 @@
 <router-outlet></router-outlet>
+
 <div class="container snippet-container" *ngIf="view.description">
-  <p>{{guavaUseCase.description}}</p>
+  <h1>{{guavaUseCase.title | uppercase}}</h1>
+  <div class="container">
+    <p [innerHTML]="guavaUseCase.description"></p>
+  </div>
+  <div class="icon" *ngIf="guavaUseCase.link">
+    <a target="_blank" [href]="guavaUseCase.link" class="fa fa-globe"></a>
+  </div>
+
 </div>
 <div class="container snippet-container" *ngIf="view.guavaWay">
   <p>{{guavaUseCase.guavaWay}}</p>

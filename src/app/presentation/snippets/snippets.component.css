@@ -1,6 +1,36 @@
 .container.snippet-container {
   height: 532px;
-  background: rgba(0, 0, 0, 0.514);
+  background: #303030;
+}
+
+.container.snippet-container h1 {
+  position: absolute;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 65px;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 8%;
+  left: 25%;
+}
+
+.container.snippet-container div {
+  font-family: monospace;
+  font-size: 23px;
+  line-height: 27px;
+  color: #dcdcdc;
+  position: absolute;
+  width: 75%;
+  top: 28%;
+  left: 10%;
+  background: #3f3f3f;
+}
+
+.container.snippet-container div.icon {
+  position: absolute;
+  top: 10%;
+  left: 91%;
+  width: 1%;
+  background: none;
 }
 
 #footer-container {

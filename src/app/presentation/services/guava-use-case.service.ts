@@ -9,9 +9,19 @@ const guavaUseCaseList: Array<GuavaUseCase> = [
   {
     id: 1,
     title: 'Pre Conditions',
-    description: 'Description about ',
-    javaWay: 'Use case in java for ',
-    guavaWay: 'Use case in Guava for ',
+    description: `<em>Static convenience methods that help a method or constructor check whether it was
+                 invoked correctly</em><br><br>
+
+                 These methods generally accept a boolean expression which is expected to be true (or in the case of
+                 checkNotNull, an object reference which is expected to be non-null).<br><br>
+
+                 Passing null throws an unchecked
+                 exception, which helps the calling method communicate to its caller that caller has made a mistake.<br><br>
+
+                 <em>If everything is successful, we get the sam argument back, making one line constructor possible</em>
+                 `,
+    javaWay: ``,
+    guavaWay: ``,
     problemStatement: 'Problem statement for ',
     defaultInputs: ' Default inputs for ',
     link: 'https://github.com/google/guava/wiki/PreconditionsExplained'
