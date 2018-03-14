@@ -1,5 +1,5 @@
 .container.snippet-container {
-  height: 532px;
+  height: 525px;
   background: #303030;
 }
 
@@ -33,7 +33,7 @@
   background: none;
 }
 
-#footer-container {
+#footer-container div {
   margin-left: 40%;
 }
 
@@ -72,6 +72,14 @@
   transition: all 0.3s ease-out;
 }
 
-.arrow:focus {
+.arrow:active {
   transform: translateY(5px);
+}
+
+.mat-progress-bar {
+  border-radius: 10px;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background-color: #3f3f3f;
 }

@@ -62,6 +62,11 @@ export class SnippetsComponent implements OnInit {
     }
   }
 
+  // Get the current actual progress bar value
+  getProgressbarValue(): number {
+    return (this.view.state + 1) * 100 / 3;
+  }
+
   // Route to the currect div in the component
   modifyCurrentView(direction: string): void {
     if (direction === 'left') {
