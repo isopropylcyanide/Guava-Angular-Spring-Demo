@@ -44,21 +44,21 @@
   left: 0%;
   opacity: 0;
   border-radius: 10px;
-  box-shadow: 1px 2px 5px white;
+  box-shadow: 1px 1px 15px white;
   animation: live-btn-anim 500ms ease-in-out forwards;
 }
 
 @keyframes live-btn-anim {
   50% {
-    left: 74%;
+    left: 83%;
     opacity: 0.6;
   }
   80% {
-    left: 68%;
+    left: 78%;
     opacity: 0.8;
   }
   100% {
-    left: 70%;
+    left: 80%;
     opacity: 1;
   }
 }
@@ -86,19 +86,17 @@
   border-left: 25px solid #3884b9;
 }
 
-.arrow.arrow-left:hover {
-  border-right-color: #96bad4;
-}
-
-.arrow.arrow-right:hover {
-  border-left-color: #96bad4;
-}
-
 .arrow {
   transition: all 0.3s ease-out;
 }
 
-.arrow:active {
+.arrow.arrow-left.pressed {
+  border-right-color: #96bad4;
+  transform: translateY(5px);
+}
+
+.arrow.arrow-right.pressed {
+  border-left-color: #96bad4;
   transform: translateY(5px);
 }
 

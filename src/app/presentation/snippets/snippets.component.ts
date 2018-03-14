@@ -41,7 +41,8 @@ export class SnippetsComponent implements OnInit {
 
   private guavaUseCase: GuavaUseCase;
   private view: SnippetView;
-  private oldView: SnippetView;
+  private viewLeftModeClicked: boolean;
+  private viewRightModeClicked: boolean;
 
   constructor(
     private router: Router,
@@ -51,6 +52,8 @@ export class SnippetsComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {
     this.view = this.initalizeView();
+    this.viewLeftModeClicked = false;
+    this.viewRightModeClicked = false;
   }
 
   @HostListener('window:keyup', ['$event'])
@@ -70,14 +73,20 @@ export class SnippetsComponent implements OnInit {
   // Route to the currect div in the component
   modifyCurrentView(direction: string): void {
     if (direction === 'left') {
+      this.viewLeftModeClicked = true;
       this.view.state = (this.view.state - 1 + 3) % 3;
     } else {
+      this.viewRightModeClicked = true;
       this.view.state = (this.view.state + 1) % 3;
     }
     this.view.description = this.view.javaWay = this.view.guavaWay = false;
     this.view.description = this.view.state === 0 ? true : false;
     this.view.javaWay = this.view.state === 1 ? true : false;
     this.view.guavaWay = this.view.state === 2 ? true : false;
+    setTimeout(() => {
+      this.viewLeftModeClicked = false;
+      this.viewRightModeClicked = false;
+    }, 300);
   }
 
   // Initialize the view object when the page loads

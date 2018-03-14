@@ -30,14 +30,14 @@
 
 <!-- The Navigation -->
 <div class="row navigation-view">
-  <div #leftarrow class="arrow arrow-left" (click)="modifyCurrentView('left')"></div>
-  <div #rightarrow class="arrow arrow-right" (click)="modifyCurrentView('right')"></div>
+  <div #leftarrow class="arrow arrow-left" [ngClass]="{pressed: viewLeftModeClicked}" (click)="modifyCurrentView('left')"></div>
+  <div #rightarrow class="arrow arrow-right" [ngClass]="{pressed: viewRightModeClicked}" (click)="modifyCurrentView('right')"></div>
 </div>
 
 <!-- The Footer -->
 <div id="footer-container" *ngIf="view.guavaWay" class="nav navbar-fixed-bottom navbar-dark bg-dark">
   <div class="btn btn-success" (click)="gotoLiveView()">
-    <i class="fa fa-arrow-circle-o-right fa-lg"></i> View in action
+    <i class="fa fa-television fa-lg"></i>
   </div>
 </div>
 <mat-progress-bar mode="determinate" [value]="getProgressbarValue()"></mat-progress-bar>

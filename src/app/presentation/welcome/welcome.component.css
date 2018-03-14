@@ -130,8 +130,16 @@ button:focus {
   }
 }
 
+.mat-sidenav {
+  background-color: #303030;
+}
+
+.mat-list-item {
+  background-color: mediumseagreen;
+}
+
 .active-router-link-welcome {
   border-left: 10px solid whitesmoke;
-  background: darkblue;
+  background: green;
   transition: all 250ms;
 }
