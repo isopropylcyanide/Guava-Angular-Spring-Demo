@@ -39,7 +39,7 @@
 
 .navigation-view {
   position: absolute;
-  top: 90%;
+  top: 85%;
   left: 90%;
 }
 
@@ -58,4 +58,20 @@
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-left: 25px solid #3884b9;
+}
+
+.arrow.arrow-left:hover {
+  border-right-color: #96bad4;
+}
+
+.arrow.arrow-right:hover {
+  border-left-color: #96bad4;
+}
+
+.arrow {
+  transition: all 0.3s ease-out;
+}
+
+.arrow:focus {
+  transform: translateY(5px);
 }

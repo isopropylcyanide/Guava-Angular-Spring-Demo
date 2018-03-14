@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
+
 import {
   Router,
   ActivatedRoute,
@@ -6,17 +13,21 @@ import {
   Event,
   NavigationEnd
 } from '@angular/router';
+
 import { GuavaUseCase } from '../guava-use-case';
 import { GuavaUseCaseService } from '../services/guava-use-case.service';
 import * as _ from 'lodash';
+
 import { ViewRestoreService } from '../view-restore.service';
 import { MatSnackBar } from '@angular/material';
+import { KEY_CODE } from '../../constant';
 
 export interface SnippetView {
   description: boolean;
   javaWay: boolean;
   guavaWay: boolean;
   live: boolean;
+  state?: number;
 }
 
 @Component({
@@ -25,6 +36,9 @@ export interface SnippetView {
   styleUrls: ['./snippets.component.css']
 })
 export class SnippetsComponent implements OnInit {
+  @ViewChild('leftarrow') leftArrowButton: ElementRef;
+  @ViewChild('rightarrow') rightArrowButton: ElementRef;
+
   private guavaUseCase: GuavaUseCase;
   private view: SnippetView;
   private oldView: SnippetView;
@@ -39,14 +53,40 @@ export class SnippetsComponent implements OnInit {
     this.view = this.initalizeView();
   }
 
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.keyCode === KEY_CODE.LEFT_ARROW) {
+      this.leftArrowButton.nativeElement.click();
+    } else {
+      this.rightArrowButton.nativeElement.click();
+    }
+  }
+
+  // Route to the currect div in the component
+  modifyCurrentView(direction: string): void {
+    if (direction === 'left') {
+      this.view.state = (this.view.state - 1 + 3) % 3;
+    } else {
+      this.view.state = (this.view.state + 1) % 3;
+    }
+    this.view.description = this.view.javaWay = this.view.guavaWay = false;
+    this.view.description = this.view.state === 0 ? true : false;
+    this.view.javaWay = this.view.state === 1 ? true : false;
+    this.view.guavaWay = this.view.state === 2 ? true : false;
+  }
+
+  // Initialize the view object when the page loads
   initalizeView(): SnippetView {
     return {
       description: true,
       javaWay: false,
       guavaWay: false,
-      live: true
+      live: true,
+      state: 0
     };
   }
+
+  // Route to the live view. Store the current use case in a service and set view to null
   gotoLiveView(): void {
     this.viewRestoreService.setGuavaUseCase(this.guavaUseCase);
     this.view.description = false;
@@ -70,7 +110,6 @@ export class SnippetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('I am called');
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.guavaUseCaseService
         .getUseCaseById(+params.get('id'))

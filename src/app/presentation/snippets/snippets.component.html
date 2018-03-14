@@ -30,9 +30,10 @@
 
 <!-- The Navigation -->
 <div class="row navigation-view">
-  <div class="arrow arrow-left"></div>
-  <div class="arrow arrow-right"></div>
+  <div #leftarrow class="arrow arrow-left" (click)="modifyCurrentView('left')"></div>
+  <div #rightarrow class="arrow arrow-right" (click)="modifyCurrentView('right')"></div>
 </div>
+
 <!-- The Footer -->
 <div id="footer-container" *ngIf="view.live" class="nav navbar-fixed-bottom navbar-dark bg-dark">
   <div class="btn btn-success" (click)="gotoLiveView()">

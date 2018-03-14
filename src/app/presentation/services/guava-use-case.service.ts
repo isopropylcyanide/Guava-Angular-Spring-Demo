@@ -18,10 +18,10 @@ const guavaUseCaseList: Array<GuavaUseCase> = [
                  Passing null throws an unchecked
                  exception, which helps the calling method communicate to its caller that caller has made a mistake.<br><br>
 
-                 <em>If everything is successful, we get the sam argument back, making one line constructor possible</em>
+                 <em>If everything is successful, we get the same argument back, making one line constructor possible</em>
                  `,
-    javaWay: ``,
-    guavaWay: ``,
+    javaWay: `My Java Way`,
+    guavaWay: `My Guava Way`,
     problemStatement: 'Problem statement for ',
     defaultInputs: ' Default inputs for ',
     link: 'https://github.com/google/guava/wiki/PreconditionsExplained'
