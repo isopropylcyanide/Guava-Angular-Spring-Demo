@@ -1,6 +1,11 @@
 .container.snippet-container {
-  height: 525px;
+  height: 92.5%;
   background: #303030;
+}
+
+.container.snippet-container .container {
+  max-height: 65%;
+  overflow-y: auto;
 }
 
 .container.snippet-container h1 {
@@ -34,7 +39,28 @@
 }
 
 #footer-container div {
-  margin-left: 40%;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  opacity: 0;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px white;
+  animation: live-btn-anim 500ms ease-in-out forwards;
+}
+
+@keyframes live-btn-anim {
+  50% {
+    left: 74%;
+    opacity: 0.6;
+  }
+  80% {
+    left: 68%;
+    opacity: 0.8;
+  }
+  100% {
+    left: 70%;
+    opacity: 1;
+  }
 }
 
 .navigation-view {

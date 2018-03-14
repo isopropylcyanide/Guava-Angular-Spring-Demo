@@ -35,8 +35,9 @@
 </div>
 
 <!-- The Footer -->
-<div id="footer-container" *ngIf="view.live" class="nav navbar-fixed-bottom navbar-dark bg-dark">
+<div id="footer-container" *ngIf="view.guavaWay" class="nav navbar-fixed-bottom navbar-dark bg-dark">
   <div class="btn btn-success" (click)="gotoLiveView()">
-    <i class="fa fa-arrow-circle-o-right fa-lg"></i> View in action</div>
-  <mat-progress-bar mode="determinate" [value]="getProgressbarValue()"></mat-progress-bar>
+    <i class="fa fa-arrow-circle-o-right fa-lg"></i> View in action
+  </div>
 </div>
+<mat-progress-bar mode="determinate" [value]="getProgressbarValue()"></mat-progress-bar>
