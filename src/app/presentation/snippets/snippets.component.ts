@@ -51,9 +51,31 @@ export class SnippetsComponent implements OnInit {
     private viewRestoreService: ViewRestoreService,
     private snackBar: MatSnackBar
   ) {
-    this.view = this.initalizeView();
     this.viewLeftModeClicked = false;
     this.viewRightModeClicked = false;
+
+    // Extract id from the params
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.guavaUseCaseService
+        .getUseCaseById(+params.get('id'))
+        .subscribe(useCase => {
+          this.guavaUseCase = useCase;
+        });
+    });
+
+    // Handle view object when route changes
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        if (!event.url.endsWith('live')) {
+          this.view = this.initalizeView();
+          this.view.description = true;
+        }
+        if (event.url.endsWith('live')) {
+          this.view = this.initalizeView();
+          this.view.live = true;
+        }
+      }
+    });
   }
 
   @HostListener('window:keyup', ['$event'])
@@ -92,10 +114,10 @@ export class SnippetsComponent implements OnInit {
   // Initialize the view object when the page loads
   initalizeView(): SnippetView {
     return {
-      description: true,
+      description: false,
       javaWay: false,
       guavaWay: false,
-      live: true,
+      live: false,
       state: 0
     };
   }
@@ -106,7 +128,7 @@ export class SnippetsComponent implements OnInit {
     this.view.description = false;
     this.view.javaWay = false;
     this.view.guavaWay = false;
-    this.view.live = false;
+    this.view.live = true;
 
     this.router
       .navigate(['live'], {
@@ -123,21 +145,5 @@ export class SnippetsComponent implements OnInit {
       );
   }
 
-  ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.guavaUseCaseService
-        .getUseCaseById(+params.get('id'))
-        .subscribe(useCase => {
-          this.guavaUseCase = useCase;
-        });
-    });
-
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        if (!event.url.endsWith('live')) {
-          this.view = this.initalizeView();
-        }
-      }
-    });
-  }
+  ngOnInit() {}
 }

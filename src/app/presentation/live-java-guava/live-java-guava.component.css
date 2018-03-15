@@ -1,6 +1,8 @@
-.container {
+.container.container-live {
+  position: absolute;
+  top: 20%;
   height: 532px;
-  background: rgba(0, 0, 0, 0.514);
+  background: #303030;
 }
 
 #footer-container {

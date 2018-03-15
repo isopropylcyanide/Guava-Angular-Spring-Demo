@@ -87,17 +87,17 @@
 }
 
 .arrow {
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .arrow.arrow-left.pressed {
   border-right-color: #96bad4;
-  transform: translateY(5px);
+  transform: translateY(3px);
 }
 
 .arrow.arrow-right.pressed {
   border-left-color: #96bad4;
-  transform: translateY(5px);
+  transform: translateY(3px);
 }
 
 .mat-progress-bar {
