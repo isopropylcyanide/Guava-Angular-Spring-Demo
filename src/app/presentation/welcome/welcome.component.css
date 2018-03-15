@@ -12,7 +12,7 @@
 }
 
 .mat-list:first-child {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 .mat-icon-button:focus,
 button:focus {
@@ -132,14 +132,22 @@ button:focus {
 
 .mat-sidenav {
   background-color: #303030;
+  width: 12%;
 }
 
 .mat-list-item {
-  background-color: mediumseagreen;
+  background-color: #57a35d;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .active-router-link-welcome {
   border-left: 10px solid whitesmoke;
-  background: green;
+  background: #418645;
   transition: all 250ms;
+}
+
+.btn:focus {
+  outline: none;
 }

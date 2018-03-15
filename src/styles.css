@@ -4,6 +4,10 @@
 @import "https://fonts.googleapis.com/css?family=Lato|Roboto:400, 900";
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
+*:focus {
+  outline: none;
+}
+
 .margin-right-15 {
   margin-right: 15px;
 }

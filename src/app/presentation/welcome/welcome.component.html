@@ -1,8 +1,8 @@
 <mat-sidenav-container #sidenav class="main-container">
   <mat-sidenav #sidenav mode="side" opened>
     <mat-list role="list" *ngFor="let usecase of guavaUseCaseLists">
-      <mat-list-item class="btn btn-primary" routerLinkActive="active-router-link-welcome" routerLink="snippets/{{usecase.id}}"
-        routerLinkActiveOptions="{exact: true}" role="list-item">{{usecase.title}}</mat-list-item>
+      <mat-list-item routerLinkActive="active-router-link-welcome" routerLink="snippets/{{usecase.id}}" routerLinkActiveOptions="{exact: true}"
+        role="list-item">{{usecase.title}}</mat-list-item>
     </mat-list>
   </mat-sidenav>
 
@@ -13,7 +13,7 @@
 
     <div class="welcome-container" *ngIf="showWelcomeRouteDiv">
       <p>Welcome to Guava</p>
-      <div class="btn btn-lg btn-success">
+      <div class="btn btn-lg btn-success" routerLink="snippets/1">
         <i class="fa fa-lemon-o"></i> Get started</div>
     </div>
 
