@@ -1,12 +1,17 @@
 <div class="container container-live">
     <!-- {{guavaUseCase.problemStatement}} -->
     <div class="container container-input">
-        <div class="well well-lg">Problem statement goes here</div>
-        <input type="text" name="userInput" id="userTextInput" placeholder="Enter live inputs to the program">
+        <div class="form-control">{{guavaUseCase.problemStatement}}</div>
+        <input type="text" class="form-control" name="userInput" id="userTextInput" placeholder="Enter inputs">
+    </div>
+
+    <div class="row execute-button">
+        <div class="btn btn-lg btn-primary">Java</div>
+        <div class="btn btn-lg btn-success">=</div>
+        <div class="btn btn-lg btn-primary">Guava</div>
     </div>
 </div>
 
 <div id="footer-container" class="nav navbar-fixed-bottom navbar-dark bg-dark">
-    <div class="btn btn-success" (click)="restoreOriginalView()">
-        <i class="fa fa-arrow-circle-o-left fa-lg"></i> Go back</div>
+    <i matTooltip="Go back to the theory" matTooltipPosition="right" class="fa fa-arrow-circle-o-left fa-2x" (click)="restoreOriginalView()"></i>
 </div>

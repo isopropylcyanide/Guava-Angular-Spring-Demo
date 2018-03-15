@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/concatMap';
 import { GuavaUseCase } from '../guava-use-case';
 
 import * as _ from 'lodash';
+import { Subscription } from 'rxjs/Subscription';
 
 const guavaUseCaseList: Array<GuavaUseCase> = [
   {
@@ -22,7 +25,8 @@ const guavaUseCaseList: Array<GuavaUseCase> = [
                  `,
     javaWay: `My Java Way`,
     guavaWay: `My Guava Way`,
-    problemStatement: 'Problem statement for ',
+    problemStatement:
+      'A method exists that accepts a string as a parameter. Try leaving blank to view the error and see what happens ',
     defaultInputs: ' Default inputs for ',
     link: 'https://github.com/google/guava/wiki/PreconditionsExplained'
   },
