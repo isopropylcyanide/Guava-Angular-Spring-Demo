@@ -8,6 +8,7 @@ import { SnippetsComponent } from './snippets/snippets.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { GuavaUseCaseService } from './services/guava-use-case.service';
 import { ViewRestoreService } from './view-restore.service';
+import { ModalsnippetComponent } from './modalsnippet/modalsnippet.component';
 
 const presentationRoutes: Routes = [
   {
@@ -38,7 +39,13 @@ const presentationRoutes: Routes = [
     RouterModule.forChild(presentationRoutes),
     MaterialModule
   ],
-  declarations: [LiveJavaGuavaComponent, SnippetsComponent, WelcomeComponent],
-  providers: [GuavaUseCaseService, ViewRestoreService]
+  declarations: [
+    LiveJavaGuavaComponent,
+    SnippetsComponent,
+    WelcomeComponent,
+    ModalsnippetComponent
+  ],
+  providers: [GuavaUseCaseService, ViewRestoreService],
+  entryComponents: [ModalsnippetComponent]
 })
 export class PresentationModule {}

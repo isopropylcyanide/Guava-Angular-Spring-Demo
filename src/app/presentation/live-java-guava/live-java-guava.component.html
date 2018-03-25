@@ -6,9 +6,9 @@
     </div>
 
     <div class="row execute-button">
-        <div class="btn btn-lg btn-primary">Java</div>
-        <div class="btn btn-lg btn-success">=</div>
-        <div class="btn btn-lg btn-primary">Guava</div>
+        <div class="btn btn-lg btn-primary" (click)="openExecuteDialog(false,'java')">Java</div>
+        <div class="btn btn-lg btn-success" (click)="openExecuteDialog(true,'java')">=</div>
+        <div class="btn btn-lg btn-primary" (click)="openExecuteDialog(false,'guava')">Guava</div>
     </div>
 </div>
 

@@ -28,6 +28,30 @@
   top: 28%;
   left: 10%;
   background: #3f3f3f;
+  animation: snippet-animation 500ms ease-in-out 0s forwards alternate;
+  opacity: 0;
+  left: 0%;
+}
+@keyframes snippet-animation {
+  0% {
+    left: 0%;
+  }
+  100% {
+    opacity: 1;
+    left: 10%;
+  }
+}
+
+.container.snippet-container div {
+  font-family: monospace;
+  font-size: 23px;
+  line-height: 27px;
+  color: #dcdcdc;
+  position: absolute;
+  width: 75%;
+  top: 28%;
+  left: 10%;
+  background: #3f3f3f;
 }
 
 .world-icon {
@@ -72,18 +96,18 @@
 .arrow.arrow-left {
   width: 0;
   height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 25px solid #3884b9;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 20px solid #3884b9;
 }
 
 .arrow.arrow-right {
   margin-left: 30px;
   width: 0;
   height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 25px solid #3884b9;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 20px solid #3884b9;
 }
 
 .arrow {
@@ -92,12 +116,12 @@
 
 .arrow.arrow-left.pressed {
   border-right-color: #96bad4;
-  transform: translateY(3px);
+  transform: translateY(2px);
 }
 
 .arrow.arrow-right.pressed {
   border-left-color: #96bad4;
-  transform: translateY(3px);
+  transform: translateY(2px);
 }
 
 .mat-progress-bar {
