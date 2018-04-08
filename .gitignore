@@ -19,6 +19,7 @@ GuavaDemoSpring/src/main/webapp/node_modules
 .project
 .classpath
 .c9/
+.recommenders/*
 *.launch
 .settings/
 *.sublime-workspace
