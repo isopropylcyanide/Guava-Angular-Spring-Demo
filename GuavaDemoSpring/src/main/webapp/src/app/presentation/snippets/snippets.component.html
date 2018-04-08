@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+
+<div matTooltip="View source" matTooltipPosition="left" class="world-icon" *ngIf="guavaUseCase.link">
+  <a target="_blank" [href]="guavaUseCase.link" class="fa fa-globe fa-2x"></a>
+</div>
+
+<!--The Description -->
+<div class="container snippet-container" *ngIf="view.description">
+  <h1>{{guavaUseCase.title | uppercase}}</h1>
+  <div class="container">
+    <p [innerHTML]="guavaUseCase.description"></p>
+  </div>
+</div>
+
+<!-- The JAVA WAY -->
+<div class="container snippet-container" *ngIf="view.javaWay">
+  <h1>THE JAVA WAY</h1>
+  <div class="container">
+    <p [innerHTML]="guavaUseCase.javaWay"></p>
+  </div>
+</div>
+
+<!-- The GUAVA WAY-->
+<div class="container snippet-container" *ngIf="view.guavaWay">
+  <h1>THE GUAVA WAY</h1>
+  <div class="container">
+    <p [innerHTML]="guavaUseCase.guavaWay"></p>
+  </div>
+</div>
+
+<!-- The Navigation -->
+<div *ngIf="!view.live" class="row navigation-view">
+  <div #leftarrow class="arrow arrow-left" [ngClass]="{pressed: viewLeftModeClicked}" (click)="modifyCurrentView('left')"></div>
+  <div #rightarrow class="arrow arrow-right" [ngClass]="{pressed: viewRightModeClicked}" (click)="modifyCurrentView('right')"></div>
+</div>
+
+<!-- The Footer -->
+<div id="footer-container" *ngIf="!view.live" class="nav navbar-fixed-bottom navbar-dark bg-dark">
+  <div class="btn btn-success" (click)="gotoLiveView()">
+    <i class="fa fa-television fa-lg"></i>
+  </div>
+</div>
+<div *ngIf="!view.live">
+  <mat-progress-bar mode="determinate" [value]="getProgressbarValue()"></mat-progress-bar>
+</div>

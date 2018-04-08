@@ -2,12 +2,17 @@
 
 # compiled output
 /dist
+GuavaDemoSpring/src/main/webapp/dist
 /dist-server
+GuavaDemoSpring/src/main/webapp/dist-server
 /tmp
+GuavaDemoSpring/src/main/webapp/tmp
 /out-tsc
+GuavaDemoSpring/src/main/webapp/out-tsc
 
 # dependencies
 /node_modules
+GuavaDemoSpring/src/main/webapp/node_modules
 
 # IDEs and editors
 /.idea
@@ -33,11 +38,17 @@
 npm-debug.log
 testem.log
 /typings
+GuavaDemoSpring/src/main/webapp/typings
 
 # e2e
 /e2e/*.js
+GuavaDemoSpring/src/main/webapp/e2e/*.js
 /e2e/*.map
+GuavaDemoSpring/src/main/webapp/e2e/*.map
 
 # System Files
 .DS_Store
+GuavaDemoSpring/src/main/webapp.DS_Store
 Thumbs.db
+GuavaDemoSpring/src/main/webappThumbs.db
+/.metadata/
