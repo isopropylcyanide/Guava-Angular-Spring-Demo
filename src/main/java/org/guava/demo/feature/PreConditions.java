@@ -14,7 +14,8 @@ public class PreConditions implements IGuavaDemoFeature {
 
 	@Override
 	public String checkWithGuava(String input) {
-		return checkNotNull(input);
+		checkNotNull(input);
+		return input;
 	}
 
 	@Override

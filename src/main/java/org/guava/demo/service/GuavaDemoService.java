@@ -1,5 +1,7 @@
 package org.guava.demo.service;
 
+import java.util.Arrays;
+
 import org.guava.demo.enums.ScenarioEnum;
 import org.guava.demo.feature.PreConditions;
 import org.guava.demo.model.RunScenario;
@@ -16,24 +18,24 @@ public class GuavaDemoService {
 		if (runScenario.getScenario() == ScenarioEnum.JAVA) {
 			try {
 				return preConditions.checkWithJava(runScenario.getInput());
-			} catch (Exception e) {
-				return e.getMessage();
+			} catch (NullPointerException ex) {
+				return Arrays.toString(ex.getStackTrace());
 			}
 		}
 
 		if (runScenario.getScenario() == ScenarioEnum.GUAVA) {
 			try {
 				return preConditions.checkWithGuava(runScenario.getInput());
-			} catch (Exception e) {
-				return e.getMessage();
+			} catch (NullPointerException ex) {
+				return Arrays.toString(ex.getStackTrace());
 			}
 		}
 
 		if (runScenario.getScenario() == ScenarioEnum.BOTH) {
 			try {
 				return preConditions.checkWithBoth(runScenario.getInput());
-			} catch (Exception e) {
-				return e.getMessage();
+			} catch (NullPointerException ex) {
+				return Arrays.toString(ex.getStackTrace());
 			}
 		} else {
 			return null;

@@ -16,6 +16,8 @@ src/main/webapp/node_modules
 
 # IDEs and editors
 /.idea
+.mvn/*
+mvn*
 .project
 .classpath
 .c9/
